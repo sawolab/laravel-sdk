@@ -1,0 +1,42 @@
+{
+  "name": "sawolabs/sawo-laravel",
+  "description": "Passwordless and OTP-less Authentication for your website. It helps you to authenticate user via their email or phone number.",
+  "keywords": [
+    "Integration",
+    "Sawo",
+    "Laravel"
+  ],
+  "license": "MIT",
+  "homepage": "https://docs.sawolabs.com/sawo/",
+  "authors": [
+    {
+      "name": "Sawolabs Tech",
+      "email": "tech@sawolabs.com"
+    }
+  ],
+  "require": {
+    "php": "^7.3|^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SawoLabs\\Laravel\\": "src/SawoLabs/Laravel"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SawoLabs\\Laravel\\SawoServiceProvider"
+      ],
+      "aliases": {
+        "Sawo": "SawoLabs\\Laravel\\SawoFacade"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
