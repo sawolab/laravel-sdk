@@ -93,7 +93,7 @@ Route::get('/sawo/callback', function () {
 
 ```
 
-## Example Project [link](https://github.com/sawolab/laravel-example)
+## [Click here to visit example project](https://github.com/sawolab/laravel-example)
 
 
 ## License
