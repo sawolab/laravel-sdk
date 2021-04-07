@@ -26,16 +26,33 @@ $ composer require sawolabs/sawo-laravel
 
 Before using Sawo, you will need to add credentials for the your application. These credentials should be placed in your application's ```config/sawo.php``` configuration file.
 
-```
-'api_key' => env('SAWO_API_KEY', ''),
-'api_secret_key' => env('SAWO_SECRET_KEY', ''),
-'identifier_type' => env('SAWO_IDENTIFIER_TYPE', 'email'),
-'redirect_url' => env('SAWO_REDIRECT', ''),
+``` php
+<?php
+
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Configure Sawo defaults
+    |--------------------------------------------------------------------------
+    |
+    | Supported Identifier Types: "phone_number_sms", "email"
+    |
+    */
+
+    'api_key' => env('SAWO_API_KEY', ''),
+
+    'api_secret_key' => env('SAWO_SECRET_KEY', ''),
+
+    'identifier_type' => env('SAWO_IDENTIFIER_TYPE', 'email'),
+
+    'redirect_url' => env('SAWO_REDIRECT', ''),
+];
+
 ```
 
-or same can be configured in .env
+then add the following in the .env file
 
-```
+``` env
 SAWO_API_KEY=<YOUR_SAWO_API_KEY_HERE>
 SAWO_SECRET_KEY=<YOUR_SAWO_SECRET_KEY_HERE>
 SAWO_IDENTIFIER_TYPE=phone_number_sms
