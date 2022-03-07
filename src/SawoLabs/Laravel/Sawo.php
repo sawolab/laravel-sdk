@@ -1,7 +1,5 @@
 <?php
-
 namespace SawoLabs\Laravel;
-
 use Illuminate\Support\Facades\Http;
 
 class Sawo
@@ -26,13 +24,14 @@ class Sawo
     {
         $response = Http::post('https://api.sawolabs.com/api/v1/userverify/', [
             'user_id' => $user_id,
+            'verification_token' => $token
         ]);
-        $verification_data = $response->json();
+        $response_data = $response->json();
 
         if (200 != $response->status()) {
             return false;
         }
 
-        return ($verification_data['verification_token'] == $token) ? true : false;
+        return ($response_data['user_valid'] == true) ? true : false;
     }
 }
